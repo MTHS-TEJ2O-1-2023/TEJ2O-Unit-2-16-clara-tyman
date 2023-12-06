@@ -20,7 +20,7 @@ if (input.buttonIsPressed(Button.A) === true) {
     PingUnit.Centimeters
   )
 }
-  if (distanceToObject < 10) {
+  if (distanceToObject <= 10) {
     basic.showNumber(distanceToObject)
     basic.pause(1000)
     radio.sendString('Too Close')
