@@ -12,7 +12,7 @@ basic.showIcon(IconNames.Happy)
 let distanceToObject: number = 0
 
 // find distance from sonar
-input.onButtonPressed(Button.A, function () {
+if (input.buttonIsPressed(Button.A) === true) {
   basic.clearScreen()
   distanceToObject = sonar.ping(
     DigitalPin.P1,
@@ -23,10 +23,11 @@ input.onButtonPressed(Button.A, function () {
       basic.showNumber(distanceToObject)
       basic.pause(1000)
     radio.sendString('Too Close')
-  }
-    else (distanceToObject > 10); {
+  } else {
+        (distanceToObject > 10); {
         basic.showNumber(distanceToObject)
         basic.pause(1000)
         radio.sendString('Good')
+    }
   }
-})
+}
