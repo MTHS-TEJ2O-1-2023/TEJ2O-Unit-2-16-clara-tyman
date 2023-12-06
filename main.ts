@@ -6,7 +6,7 @@
 */
 
 // setup
-radio.setGroup(1)
+radio.setGroup(8)
 basic.showIcon(IconNames.Happy)
 
 let distanceToObject: number = 0
@@ -15,8 +15,11 @@ let distanceToObject: number = 0
 input.onButtonPressed(Button.A, function () {
   basic.clearScreen()
   distanceToObject = sonar.ping(
-  DigitalPin.P1,
-  DigitalPin.P2,
-  PingUnit.Centimeters
+    DigitalPin.P1,
+    DigitalPin.P2,
+    PingUnit.Centimeters
   )
+  if (distanceToObject > 10) {
+    radio.sendString("TooClose")
+  }
 })
