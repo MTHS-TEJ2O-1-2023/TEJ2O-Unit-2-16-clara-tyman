@@ -20,9 +20,13 @@ input.onButtonPressed(Button.A, function () {
     PingUnit.Centimeters
   )
   if (distanceToObject < 10) {
+      basic.showNumber(distanceToObject)
+      basic.pause(1000)
     radio.sendString('Too Close')
   }
-  if (distanceToObject > 10) {
-    radio.sendString('Good')
+    else (distanceToObject > 10); {
+        basic.showNumber(distanceToObject)
+        basic.pause(1000)
+        radio.sendString('Good')
   }
 })
