@@ -14,7 +14,7 @@ let distanceToObject: number = 0
 //loop
 while (true) {
 if (input.buttonIsPressed(Button.A) === true) {
-  distanceToObject = sonar.ping(DigitalPin.P0, DigitalPin.P1, PingUnit.Centimeters)
+  distanceToObject = sonar.ping(DigitalPin.P1, DigitalPin.P2, PingUnit.Centimeters)
 
 // if distance is less than or equal to 10
 if (distanceToObject <= 10) {
@@ -22,7 +22,6 @@ if (distanceToObject <= 10) {
   basic.pause(1000)
   radio.sendString('Too close')
   basic.pause(1000)
-  basic.showIcon(IconNames.Happy)
 }
 // if distance is more than 10
 if (distanceToObject > 10) {
@@ -30,7 +29,6 @@ if (distanceToObject > 10) {
   basic.pause(1000)
   radio.sendString("Ok")
   basic.pause(1000)
-  basic.showIcon(IconNames.Happy)
     }
   }
 }
