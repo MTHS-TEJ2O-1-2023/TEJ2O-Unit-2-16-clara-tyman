@@ -6,7 +6,7 @@
 */
 
 // setup
-radio.setGroup(8)
+radio.setGroup(76)
 basic.showIcon(IconNames.Happy)
 
 let distanceToObject: number = 0
